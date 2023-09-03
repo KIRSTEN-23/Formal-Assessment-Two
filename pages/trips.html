@@ -13,19 +13,18 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="../scripts/main.js"></script>
   </head>
   <body>
 
     <!-- ------------------------------------------------------------------------------------------------ -->
     <!-- Nav Bar -->
-    <nav class="navbar fixed-top bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <header>
+      <nav class="navbar fixed-top bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
 
             <!-- Logo -->
-            <a class="navbar-brand" href="../pages/home.html">
-                <img src="../assets/Asset 3.svg" alt="CorporateVentures" width="65" height="59">
-            </a>
+            <a class="navbar-brand" href="../pages/home.html"></a>
 
             <!-- Toggler Offcanvas -->
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -54,7 +53,15 @@
               </div>
             </div>
           </nav>
+    </header>
 
+          <!-- ---------------------------------------------------------------------------------------------------- -->
+        <!-- Trips List Cards -->
+
+        <div class="row" id="tripsContainer">
+
+          <!-- Trips cards are appended here --> 
+    
           <!---------------------------------------------------------------------------------------------------->
           <!-- Footer -->
           <div class="footer bg-dark" data-bs-theme="dark">
@@ -82,9 +89,7 @@
                 </div>
         
                 <div>
-                    <a href="../pages/home.html">
-                        <img src="../assets/Asset 3.svg" alt="CorporateVentures" width="75" height="69" class="logo-footer">
-                    </a>
+                  <a href="../pages/home.html" class="logo-footer"></a>
                 </div>
         
                 <div>
@@ -94,6 +99,45 @@
                 </div>
             </div>
 
-          
+          <!-- ---------------------------------------------------------------------------------------------------- -->
+          <!-- Templates -->
+
+          <template id="tripCardTemplate">
+            <div class="col-3">
+            
+            <!-- Card -->
+              <div class="card">
+                <div class="card-img-top"></div>
+                <div class="card-body">
+                  <ul class="list-inline">
+                    <li class="list-inline-item" id="regionText" style="margin-right:100px;">
+                      Destination</li>
+                    <li class="list-inline-item" id="durationText" style="margin-left:100px;">
+                      Duration</li>
+                  </ul>
+                  <h2 class="card-title" id="destinationText">Card title</h2>
+                  <table class="table d-inline-flex d-flex flex-wrap align-items-start" style="padding: 0;">
+                    <tbody>
+                      <tr>
+                        <td scope="card-row" colspan="2">
+                          <div class="calendar d-flex align-items-center justify-content-center"><i class="bi bi-calendar4"
+                              style="font-size: 20px;"></i></div>
+                        </td>
+                        <td class="text-start align-middle"
+                          style="font-family: 'Comfortaa', cursive;font-size: 16px; color: white;">Departure<b id="dateText"><br>Date</b></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="line"></div>
+                  <a>
+                    <div class="d-grid justify-content-md-end">
+                      <div id="priceText" style="font-family: 'Comfortaa', cursive;font-size: 20px;">R500.00</div>
+                      <button class="btn me-md-2" type="button" style="background-color: #FEC521;" id="purchaseButton"><b>Purchase Ticket <i class="bi bi-chevron-right"></i></b></button>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </template>
   </body>
 </html>
