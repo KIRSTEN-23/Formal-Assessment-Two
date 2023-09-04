@@ -61,6 +61,62 @@
         <div class="row" id="tripsContainer">
 
           <!-- Trips cards are appended here --> 
+
+          <!-- ---------------------------------------------------------------------------------------------------- -->
+        <!-- Filters and Sorts -->
+
+          <!--Filter Dropdowns-->
+        <div class="row align-items-center mt-4">
+          <div class="filter d-flex justify-content-evenly d-flex align-items-center">
+            <div class="col d-inline-flex"><i class="bi bi-filter-left"></i></div>
+            <div class="col d-inline-flex">
+              <div class="dropdown">
+                <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Trip Type
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" name="filterDropdown" id="allTripsFilter" value="" autocomplete="off">All Trips</a></li>
+                  <li><a class="dropdown-item" name="filterDropdown" id="singleDestinationFilter" value="single" autocomplete="off">Single Destination</a></li>
+                  <li><a class="dropdown-item" name="filterDropdown" id="multiDestinationFilter" value="Multi Destinations" autocomplete="off">Multi Destination</a></li>
+                  <li><a class="dropdown-item" name="filterDropdown" id="roundTripFilter" value="Round Trip" autocomplete="off">Round Trip</a></li>
+                  <li><a class="dropdown-item" name="filterDropdown" id="rowBoatSpecialFilter" value="Row Boat Special" autocomplete="off">Row Boat Special</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col d-inline-flex">
+              <div class="dropdown">
+                <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Duration
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" name="filterDropdown" id="shortDurationFilter" value="short" autocomplete="off">Short Duration</a></li>
+                  <li><a class="dropdown-item" name="filterDropdown" id="longDurationFilter" value="long" autocomplete="off">Long Duration</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--Sort Dropdowns-->
+          <div class="sort d-flex justify-content-evenly d-flex align-items-center">
+            <div class="col d-inline-flex"><i class="bi bi-sort-down"></i></div>
+            <div class="col d-inline-flex"><div class="dropdown">
+              <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Alphabetically
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" name="sortDropdown" id="aToZ" value="A to Z" autocomplete="off">A to Z</a></li>
+                <li><a class="dropdown-item" name="sortDropdown" id="zToA" value="Z to A" autocomplete="off">Z to A</a></li>
+              </ul>
+            </div></div>
+            <div class="col d-inline-flex"><div class="dropdown">
+              <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Price
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" name="sortDropdown" id="highToLow" value="highest to lowest" autocomplete="off">Price: High to Low</a></li>
+                <li><a class="dropdown-item" name="sortDropdown" id="lowToHigh" value="lowest to highest" autocomplete="off">Price: Low to High</a></li>
+              </ul>
+            </div></div>
+          </div>
     
           <!---------------------------------------------------------------------------------------------------->
           <!-- Footer -->
@@ -100,7 +156,7 @@
             </div>
 
           <!-- ---------------------------------------------------------------------------------------------------- -->
-          <!-- Templates -->
+          <!-- Template -->
 
           <template id="tripCardTemplate">
             <div class="col-3">

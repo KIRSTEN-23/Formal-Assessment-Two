@@ -178,9 +178,27 @@ button {
     margin-bottom: 20px;
 }
 
+/*Filter*/
+.filter{
+    width: 44%;
+    background-color: #17A6A6;
+    height: 75px;
+    margin: 4% 3%;
+}
+
+.sort{
+    width: 44%;
+    background-color: #17A6A6;
+    height: 75px;
+    margin: 4% 3%;
+}
+
+.col{
+    font-size: 50px;
+}
+
 /* Footer */
 .footer {
-    position: fixed;
     z-index: 3;
     left: 0;
     bottom: 0;
