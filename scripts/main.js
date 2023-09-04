@@ -235,6 +235,23 @@ function loadTrips(tripsToShow) {
       const trip = tripsToShow[i];
       
       console.log(trip.destination);
+
+      // Open weather API call for getting the temprature
+    $.ajax({
+      type: "GET",
+      url: "https://api.openweathermap.org/data/2.5/weather?q=" + trip.destination + "a&appid=2a8cbb975f8d00c42df43676168044ff",
+      success: function (data) {
+        let tempData = data;
+        console.log(tempData);
+      },
+    }).done(function () {
+
+      // Set Temperature
+      let currentChild = $("#tripsContainer").children().eq(i);
+      $(currentChild).find("#weatherTemp").text("Temperature: " + Math.round(tempData.main.temp- 273) + "°C");
+     
+    
+    });
   
       // 1: Select the trips container and add the current array trip to it
       $("#tripsContainer").append($("#tripCardTemplate").html());
@@ -252,6 +269,7 @@ function loadTrips(tripsToShow) {
   
       // 4: Hide the Purchase ticket Button from the current card
       $(currentChild).find("#purchaseButton").hide();
+      $(currentChild).find("#weatherTemp").hide();
     }
   
   };
@@ -292,7 +310,7 @@ function filterSortTrips() {
 
     // Sort the trips Alphbetically, from A to Z
     filteredSortedArrTrips = filteredSortedArrTrips.sort((a,b) => {
-      return a.destination - b.destination
+      return a.destination.localeCompare(b.destination);
     });
   }
 
@@ -303,10 +321,9 @@ function filterSortTrips() {
 // When hovering over card
 // ------------------------------------------------------------------------
 
-$("#tripsContainer").on('hover','.card', function() {
-
+$("#tripsContainer").on('mouseenter mouseleave', '.card', function() {
   // Toggle the price & description text
   $(this).find("#priceText").toggle();
   $(this).find("#purchaseButton").toggle();
-
+  $(this).find("#weatherTemp").toggle();
 });
